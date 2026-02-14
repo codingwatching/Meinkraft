@@ -3,9 +3,6 @@
 #include "Meinkraft/BlockContainer.h"
 #include "Meinkraft/NoiseGenerator.h"
 
-#include <FastNoiseLite.h>
-#include <vector>
-
 class MountainGenerator
 {
 public:

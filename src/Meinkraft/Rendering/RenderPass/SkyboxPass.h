@@ -1,12 +1,11 @@
 #pragma once
 
+#include "Meinkraft/GL/ShaderProgram.h"
 #include "Meinkraft/Rendering/RenderPass/RenderPass.h"
 
 #include <glad/gl.h>
 #include <glm/glm.hpp>
 #include <memory>
-
-class ShaderProgram;
 
 class SkyboxPass : public RenderPass
 {

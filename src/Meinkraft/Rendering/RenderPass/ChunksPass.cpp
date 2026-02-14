@@ -1,11 +1,7 @@
 #include "ChunksPass.h"
 
-#include "Meinkraft/Chunk.h"
-#include "Meinkraft/ChunkBuffer.h"
 #include "Meinkraft/ChunkBufferManager.h"
-#include "Meinkraft/GL/ShaderProgram.h"
 #include "Meinkraft/GL/ShaderProgramCreateInfo.h"
-#include "Meinkraft/GL/VertexData.h"
 #include "Meinkraft/Toolbox.h"
 #include "Meinkraft/World.h"
 

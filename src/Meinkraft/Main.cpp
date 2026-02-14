@@ -1,6 +1,8 @@
 #include "Meinkraft/Block/BlockManager.h"
 #include "Meinkraft/Camera.h"
+#include "Meinkraft/ChunkBufferManager.h"
 #include "Meinkraft/Rendering/Renderer.h"
+#include "Meinkraft/Texture/Block/BlockTextureManager.h"
 #include "Meinkraft/Toolbox.h"
 #include "Meinkraft/World.h"
 

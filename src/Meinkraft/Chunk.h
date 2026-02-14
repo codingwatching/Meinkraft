@@ -1,12 +1,10 @@
 #pragma once
 
-#include "Meinkraft/BlockContainer.h"
 #include "Meinkraft/ChunkBufferSegment.h"
 #include "Meinkraft/GL/VertexData.h"
 #include "Meinkraft/WorldGenerator.h"
 
 #include <atomic>
-#include <glad/gl.h>
 #include <glm/glm.hpp>
 #include <memory>
 #include <vector>

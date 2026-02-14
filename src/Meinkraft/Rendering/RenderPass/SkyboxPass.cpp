@@ -1,12 +1,8 @@
 #include "SkyboxPass.h"
 
 #include "Meinkraft/Camera.h"
-#include "Meinkraft/Chunk.h"
-#include "Meinkraft/ChunkBufferManager.h"
-#include "Meinkraft/GL/ShaderProgram.h"
 #include "Meinkraft/GL/ShaderProgramCreateInfo.h"
 #include "Meinkraft/Toolbox.h"
-#include "Meinkraft/World.h"
 
 SkyboxPass::SkyboxPass()
 {

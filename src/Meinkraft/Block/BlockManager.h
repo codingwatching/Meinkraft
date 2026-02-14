@@ -1,8 +1,6 @@
 #pragma once
 
-#include "Meinkraft/Block/BlockType.h"
 #include "Meinkraft/BlockId.h"
-#include "Meinkraft/GL/VertexData.h"
 
 #include <unordered_map>
 

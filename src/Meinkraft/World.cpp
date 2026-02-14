@@ -6,8 +6,6 @@
 #include "Meinkraft/Toolbox.h"
 
 #include <format>
-#include <glm/gtx/string_cast.hpp>
-#include <iostream>
 #include <magic_enum/magic_enum.hpp>
 
 static void dispatchChunkToNextTask(Chunk* chunk, ConcurrentChunkTaskQueue& threadPoolQueue, MainThreadChunkTaskQueue& mainThreadQueue)

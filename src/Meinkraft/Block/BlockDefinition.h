@@ -1,13 +1,10 @@
 #pragma once
 
 #include "Meinkraft/Block/BlockType.h"
-#include "Meinkraft/BlockId.h"
 #include "Meinkraft/GL/VertexData.h"
 
-#include <array>
-#include <functional>
-#include <memory>
 #include <string_view>
+#include <unordered_map>
 #include <vector>
 
 struct VertexGenerationInfo;

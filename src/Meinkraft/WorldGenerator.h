@@ -3,8 +3,6 @@
 #include "Meinkraft/BlockContainer.h"
 #include "Meinkraft/MountainGenerator.h"
 
-#include <vector>
-
 class WorldGenerator
 {
 public:

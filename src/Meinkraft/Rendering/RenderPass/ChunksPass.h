@@ -1,13 +1,12 @@
 #pragma once
 
 #include "Meinkraft/Camera.h"
+#include "Meinkraft/GL/ShaderProgram.h"
 #include "Meinkraft/Rendering/RenderPass/RenderPass.h"
 
 #include <glad/gl.h>
 #include <glm/glm.hpp>
 #include <memory>
-
-class ShaderProgram;
 
 class ChunksPass : public RenderPass
 {

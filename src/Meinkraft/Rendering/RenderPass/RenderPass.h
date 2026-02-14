@@ -1,7 +1,5 @@
 #pragma once
 
-class ChunkBufferManager;
-
 class RenderPass
 {
 public:

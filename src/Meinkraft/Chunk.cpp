@@ -1,7 +1,6 @@
 #include "Chunk.h"
 
 #include "Meinkraft/ChunkBufferManager.h"
-#include "Meinkraft/Rendering/Renderer.h"
 #include "Meinkraft/Toolbox.h"
 
 #include <glm/gtc/matrix_transform.hpp>

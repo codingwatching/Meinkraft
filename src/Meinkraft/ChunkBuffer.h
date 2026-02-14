@@ -9,7 +9,7 @@
 class ChunkBuffer
 {
 public:
-	static inline constexpr int BUFFER_ELEMENT_COUNT = 1000000;
+	static constexpr int BUFFER_ELEMENT_COUNT = 1000000;
 
 	~ChunkBuffer();
 	ChunkBuffer(ChunkBuffer&& other) = delete;

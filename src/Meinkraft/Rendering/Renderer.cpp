@@ -9,9 +9,6 @@ Renderer::Renderer()
 	_skyboxPass = std::make_unique<SkyboxPass>();
 }
 
-Renderer::~Renderer()
-{}
-
 void Renderer::render()
 {
 	_chunksPass->render();

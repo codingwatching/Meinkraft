@@ -4,7 +4,6 @@
 
 #include <mutex>
 #include <queue>
-#include <semaphore>
 
 class MainThreadChunkTaskQueue
 {

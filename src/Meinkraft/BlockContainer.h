@@ -18,5 +18,5 @@ public:
 	static glm::u8vec3 indexToPos(int index);
 
 private:
-	std::array<BlockId, 16 * 16 * 16> _blocks;
+	std::array<BlockId, 16 * 16 * 16> _blocks{};
 };
