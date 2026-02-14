@@ -8,6 +8,7 @@
 #include <array>
 #include <vector>
 #include <functional>
+#include <string_view>
 
 struct VertexGenerationInfo;
 

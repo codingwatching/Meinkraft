@@ -2,7 +2,7 @@
 
 #include <format>
 #include <stdexcept>
-#include <magic_enum.hpp>
+#include <magic_enum/magic_enum.hpp>
 
 void MainThreadChunkTaskQueue::push(Chunk* chunk)
 {
