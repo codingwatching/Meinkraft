@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Meinkraft/NoiseGenerator.h"
 #include "Meinkraft/BlockContainer.h"
+#include "Meinkraft/NoiseGenerator.h"
 
 #include <FastNoiseLite.h>
 #include <vector>
@@ -13,7 +13,7 @@ public:
 
 private:
 	NoiseGenerator _noise;
-	
+
 	static constexpr int MIN_HEIGHT = 64;
 	static constexpr int MAX_HEIGHT = 255;
 };

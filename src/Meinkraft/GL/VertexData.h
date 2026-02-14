@@ -14,8 +14,8 @@
  */
 struct VertexData
 {
-	glm::u8vec3 position;    // xxxxxxxx, yyyyyyyy, zzzzzzzz
-	glm::u8vec2 uv;          // uuuuuuuu, vvvvvvvv
-	uint8_t face;            // ffffffff
-	BlockTextureId texture;  // tttttttt
+	glm::u8vec3 position; // xxxxxxxx, yyyyyyyy, zzzzzzzz
+	glm::u8vec2 uv; // uuuuuuuu, vvvvvvvv
+	uint8_t face; // ffffffff
+	BlockTextureId texture; // tttttttt
 };

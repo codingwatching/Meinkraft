@@ -9,7 +9,7 @@ void ChunkBufferManager::acquireAvailableSegment(std::unique_ptr<ChunkBufferSegm
 			return;
 		}
 	}
-	
+
 	_buffers.emplace_back(new ChunkBuffer);
 	_buffers.back()->tryAcquireAvailableSegment(segment, requestedVertexCount);
 }

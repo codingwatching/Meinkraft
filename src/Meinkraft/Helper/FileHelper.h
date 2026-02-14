@@ -1,14 +1,14 @@
 #pragma once
 
+#include <format>
+#include <fstream>
 #include <string>
 #include <vector>
-#include <fstream>
-#include <format>
 
 class FileHelper
 {
 public:
-	static std::string readAllText(const std::string &path)
+	static std::string readAllText(const std::string& path)
 	{
 		std::ifstream in(path, std::ios::in | std::ios::binary);
 		if (in)

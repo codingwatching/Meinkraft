@@ -5,9 +5,9 @@
 BlockTextureManager::BlockTextureManager()
 {
 	registerTextures();
-	
+
 	glCreateBuffers(1, &_texturesBuffer);
-	
+
 	std::vector<GLuint64> textureHandles;
 	for (const auto& [id, texture] : _textures)
 	{

@@ -14,7 +14,7 @@ class Renderer
 public:
 	Renderer();
 	~Renderer();
-	
+
 	void render();
 
 private:

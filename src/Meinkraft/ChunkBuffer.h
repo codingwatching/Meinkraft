@@ -2,23 +2,23 @@
 
 #include "Meinkraft/ChunkBufferSegment.h"
 
-#include <set>
 #include <glad/gl.h>
 #include <memory>
+#include <set>
 
 class ChunkBuffer
 {
 public:
 	static inline constexpr int BUFFER_ELEMENT_COUNT = 1000000;
-	
+
 	~ChunkBuffer();
 	ChunkBuffer(ChunkBuffer&& other) = delete;
 	ChunkBuffer& operator=(ChunkBuffer&& other) = delete;
 	ChunkBuffer(const ChunkBuffer& other) = delete;
 	ChunkBuffer& operator=(const ChunkBuffer& other) = delete;
-	
+
 	GLuint getGLBuffer() const;
-	
+
 	int getActiveSegmentCount() const;
 
 private:
@@ -29,13 +29,13 @@ private:
 			return a->getStartIndex() < b->getStartIndex();
 		}
 	};
-	
+
 	std::set<ChunkBufferSegment*, BufferSegmentCompare> _bufferSegments;
 	GLuint _vbo = -1;
-	
+
 	friend class ChunkBufferSegment;
 	friend class ChunkBufferManager;
-	
+
 	ChunkBuffer();
 	bool tryAcquireAvailableSegment(std::unique_ptr<ChunkBufferSegment>& newSegment, int requestedVertexCount);
 	void releaseMemory(ChunkBufferSegment* segment);

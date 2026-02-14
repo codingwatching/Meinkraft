@@ -3,7 +3,7 @@
 BlockContainer MountainGenerator::generate(int chunkX, int chunkY, int chunkZ)
 {
 	BlockContainer blockContainer;
-	
+
 	glm::u8vec3 blockPos;
 	for (blockPos.z = 0; blockPos.z < 16; blockPos.z++)
 	{
@@ -13,13 +13,13 @@ BlockContainer MountainGenerator::generate(int chunkX, int chunkY, int chunkZ)
 			float surfaceHeightNoise = _noise.getNoise(chunkX + blockPos.x / 16.0f, chunkZ + blockPos.z / 16.0f, 12, 3, 2, (1 - flatness) * 0.4f);
 			surfaceHeightNoise *= surfaceHeightNoise;
 			surfaceHeightNoise = glm::smoothstep(0.0f, 0.8f, surfaceHeightNoise);
-			
+
 			int surfaceHeight = std::lerp(MIN_HEIGHT, MAX_HEIGHT, surfaceHeightNoise);
-			
+
 			for (blockPos.y = 0; blockPos.y < 16; blockPos.y++)
 			{
 				int worldSpaceBlockY = chunkY * 16 + blockPos.y;
-				
+
 				if (worldSpaceBlockY < surfaceHeight - 4)
 				{
 					blockContainer.setBlockId(blockPos, BlockId::STONE);
@@ -39,6 +39,6 @@ BlockContainer MountainGenerator::generate(int chunkX, int chunkY, int chunkZ)
 			}
 		}
 	}
-	
+
 	return blockContainer;
 }

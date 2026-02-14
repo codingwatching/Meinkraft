@@ -3,7 +3,7 @@
 ChunkBuffer::ChunkBuffer()
 {
 	glCreateBuffers(1, &_vbo);
-	
+
 	glNamedBufferStorage(_vbo, ChunkBuffer::BUFFER_ELEMENT_COUNT * sizeof(VertexData), nullptr, GL_DYNAMIC_STORAGE_BIT);
 }
 
@@ -18,14 +18,14 @@ bool ChunkBuffer::tryAcquireAvailableSegment(std::unique_ptr<ChunkBufferSegment>
 		}
 		startIndex = segment->getStartIndex() + segment->getVertexCount();
 	}
-	
+
 	if (startIndex + requestedVertexCount < ChunkBuffer::BUFFER_ELEMENT_COUNT)
 	{
 		newSegment.reset(new ChunkBufferSegment(*this, startIndex, requestedVertexCount));
 		_bufferSegments.insert(newSegment.get());
 		return true;
 	}
-	
+
 	return false;
 }
 

@@ -1,31 +1,33 @@
 #include "Chunk.h"
 
-#include "Meinkraft/Toolbox.h"
-#include "Meinkraft/Rendering/Renderer.h"
 #include "Meinkraft/ChunkBufferManager.h"
+#include "Meinkraft/Rendering/Renderer.h"
+#include "Meinkraft/Toolbox.h"
 
-#include <stdexcept>
 #include <glm/gtc/matrix_transform.hpp>
+#include <stdexcept>
 
 Chunk::Chunk(glm::ivec3 position):
-_position(position)
+	_position(position)
 {
 	_model = glm::translate(glm::mat4(1), static_cast<glm::vec3>(_position) * 16.0f);
 }
 
 void Chunk::initializeBlocks(WorldGenerator& worldGenerator)
 {
-	if (_state != ChunkState::WAITING_BLOCKS_GENERATION) throw std::runtime_error("A chunk is in an invalid state.");
-	
+	if (_state != ChunkState::WAITING_BLOCKS_GENERATION)
+		throw std::runtime_error("A chunk is in an invalid state.");
+
 	_blockContainer = worldGenerator.generateMountains(_position.x, _position.y, _position.z);
-	
+
 	_state = ChunkState::WAITING_MESH_GENERATION;
 }
 
 void Chunk::generateMesh()
 {
-	if (_state != ChunkState::WAITING_MESH_GENERATION) throw std::runtime_error("A chunk is in an invalid state.");
-	
+	if (_state != ChunkState::WAITING_MESH_GENERATION)
+		throw std::runtime_error("A chunk is in an invalid state.");
+
 	glm::u8vec3 pos;
 	for (pos.z = 0; pos.z < 16; pos.z++)
 	{
@@ -39,7 +41,7 @@ void Chunk::generateMesh()
 				BlockType ym1 = pos.y > 0 ? _blockContainer.getBlockDefinition(pos + glm::u8vec3(0, -1, 0)).type : BlockType::TRANSPARENT;
 				BlockType zp1 = pos.z < 15 ? _blockContainer.getBlockDefinition(pos + glm::u8vec3(0, 0, +1)).type : BlockType::TRANSPARENT;
 				BlockType zm1 = pos.z > 0 ? _blockContainer.getBlockDefinition(pos + glm::u8vec3(0, 0, -1)).type : BlockType::TRANSPARENT;
-				
+
 				BlockDefinition& blockDefinition = _blockContainer.getBlockDefinition(pos);
 				blockDefinition.vertexGenerator(_temporaryRamBuffer, pos, xp1, xm1, yp1, ym1, zp1, zm1, blockDefinition.textures);
 			}
@@ -57,22 +59,24 @@ void Chunk::generateMesh()
 
 void Chunk::reserveBufferSegment()
 {
-	if (_state != ChunkState::WAITING_BUFFER_SEGMENT_RESERVATION) throw std::runtime_error("A chunk is in an invalid state.");
-	
+	if (_state != ChunkState::WAITING_BUFFER_SEGMENT_RESERVATION)
+		throw std::runtime_error("A chunk is in an invalid state.");
+
 	_bufferSegment.reset();
-	
+
 	Toolbox::chunkBufferManager->acquireAvailableSegment(_bufferSegment, _temporaryRamBuffer.size());
-	
+
 	_state = ChunkState::WAITING_MESH_UPLOAD;
 }
 
 void Chunk::uploadMesh()
 {
-	if (_state != ChunkState::WAITING_MESH_UPLOAD) throw std::runtime_error("A chunk is in an invalid state.");
-	
+	if (_state != ChunkState::WAITING_MESH_UPLOAD)
+		throw std::runtime_error("A chunk is in an invalid state.");
+
 	_bufferSegment->setData(_temporaryRamBuffer);
 	_temporaryRamBuffer = std::vector<VertexData>();
-	
+
 	_state = ChunkState::READY;
 }
 

@@ -3,9 +3,10 @@
 #include "Meinkraft/ChunkBuffer.h"
 
 ChunkBufferSegment::ChunkBufferSegment(ChunkBuffer& container, int startIndex, int vertexCount):
-_container(container), _startIndex(startIndex), _vertexCount(vertexCount)
+	_container(container),
+	_startIndex(startIndex),
+	_vertexCount(vertexCount)
 {
-
 }
 
 ChunkBufferSegment::~ChunkBufferSegment()

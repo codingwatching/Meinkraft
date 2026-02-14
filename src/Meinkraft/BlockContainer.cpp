@@ -28,7 +28,7 @@ int BlockContainer::posToIndex(glm::u8vec3 pos)
 
 glm::u8vec3 BlockContainer::indexToPos(int index)
 {
-	return glm::u8vec3(index % 16, (index/16) % 16, (index/256) % 16);
+	return glm::u8vec3(index % 16, (index / 16) % 16, (index / 256) % 16);
 }
 
 BlockDefinition& BlockContainer::getBlockDefinition(glm::u8vec3 pos) const
